@@ -94,7 +94,7 @@ export default function ContactPage() {
           </div>
         </AnimatedSection>
 
-        {/* Right column â€” contact form */}
+        {/* Right column — contact form */}
         <AnimatedSection delay={0.15}>
           <ContactForm />
         </AnimatedSection>
