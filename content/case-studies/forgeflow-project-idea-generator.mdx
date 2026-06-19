@@ -1,5 +1,5 @@
 ---
-title: "ForgeFlow - Project Idea Generator"
+title: "ForgeFlow — Project Idea Generator"
 description: "A developer tool that generates personalised project ideas based on skill level and technical interests — designed to remove the blank-page paralysis that stops developers from building."
 role: "Product Designer"
 company: "Personal Project"
@@ -19,11 +19,11 @@ order: 2
 
 ## The Problem
 
-Every developer has been there: you want to build something, you open a blank code editor, and then you stare at it for forty minutes. Not because you lack skill — but because choosing *what* to build is its own problem, and nobody teaches you how to solve it.
+Every developer has been there: you want to build something, you open a blank code editor, and then you stare at it for forty minutes. Not because you lack skill — but because **choosing what to build is its own problem**, and nobody teaches you how to solve it.
 
-The gap between "I want to improve" and "I know what to build next" is wide, and most solutions — GitHub trending, dev blogs, Twitter threads — are either too generic or too advanced. A junior developer looking at a senior engineer's project list feels overwhelmed. A senior engineer looking at beginner tutorials feels bored.
+The gap between *"I want to improve"* and *"I know what to build next"* is wide. Most solutions — GitHub trending, dev blogs, tutorial lists — are either too generic or too advanced. A junior developer looking at a senior engineer's project list feels overwhelmed. A senior engineer scanning beginner tutorials feels bored.
 
-**The insight: project inspiration fails because it is not personalised.**
+> Project inspiration fails because it is not personalised. ForgeFlow was built to fix that.
 
 ---
 
@@ -31,24 +31,25 @@ The gap between "I want to improve" and "I know what to build next" is wide, and
 
 ### Who is stuck?
 
-I spoke with developers across three experience levels — people just starting out, mid-level engineers looking to stretch, and senior developers who wanted complex architectural challenges. The pattern was consistent across all three:
+I spoke with developers across three experience levels — people just starting out, mid-level engineers looking to stretch, and senior developers who wanted complex architectural challenges. The pattern was consistent across all three groups:
 
 > "I know I need to build more projects. I just don't know which ones are worth my time."
 
-The blockers differed by level:
+The **blockers differed significantly by level:**
 
-- **Beginners** felt overwhelmed by scope — they didn't know if an idea was too hard or too easy
-- **Intermediate developers** wanted projects that would actually push them into new territory
-- **Senior engineers** were bored by typical project lists — they wanted genuine complexity
+- **Beginners** felt overwhelmed by scope — they couldn't tell if an idea was too hard or too easy for where they actually were
+- **Intermediate developers** wanted projects that would push them into genuinely new territory, not just reinforce what they already knew
+- **Senior engineers** were bored by typical project lists — they wanted architectural complexity and real-world constraints to work against
 
 ### What was already out there?
 
-Existing solutions had one of two problems:
+Existing solutions had one of two fundamental problems:
 
-1. **Too broad** — generic "build a todo app" lists that applied to no one specifically
-2. **Too narrow** — tutorials that locked you into one tech stack or one approach
+**Too broad** — generic "build a todo app" lists that applied to no one specifically. The advice was sound but the fit was wrong.
 
-Neither solution respected where the developer actually was in their journey.
+**Too narrow** — tutorials that locked you into a single tech stack or a single approach, leaving no room for the developer's own context or interests.
+
+Neither solution respected where the developer actually was in their journey. That was the gap ForgeFlow was designed to fill.
 
 ---
 
@@ -56,52 +57,52 @@ Neither solution respected where the developer actually was in their journey.
 
 ### Defining the core interaction
 
-The central design question was: **how do you personalise without friction?**
+The central design question was: **how do you personalise without adding friction?**
 
-Most personalisation systems require sign-up, profiles, questionnaires. That creates a barrier before the user has even seen value. The goal was to make personalisation feel immediate — answer two or three questions, get something useful. No account. No onboarding flow.
+Most personalisation systems require sign-up, a profile, or a questionnaire before you see any value. That creates a barrier before the user has even had a reason to trust the product. The goal was to make personalisation feel *immediate* — answer two or three questions, get something genuinely useful. No account. No onboarding flow.
 
 The three inputs I settled on:
 
-1. **Skill level** — three clear tiers with honest descriptions of what each means in practice
-2. **Interest domains** — multi-select categories so users could combine interests naturally (e.g. Frontend + AI/ML)
-3. **Volume** — how many ideas at once (1 to 5), because some people want one great idea, others want a shortlist to choose from
+1. **Skill level** — three clear tiers with honest, plain-language descriptions of what each means in practice
+2. **Interest domains** — multi-select categories so users could combine interests naturally (e.g. Frontend + AI/ML, or Backend + Security)
+3. **Volume** — how many ideas to generate at once (1 to 5), because some people want one great idea and others want a shortlist to choose from
 
-### Information architecture
+### Keeping the flow short
 
-The flow is deliberately linear and short:
+The interaction is deliberately linear and fast:
 
-```
-Select skill level → Choose domains → Set volume → Generate
-```
+**Choose skill level → Select domains → Set volume → Generate**
 
-No back-and-forth. No progressive disclosure that confuses. The page has one job and it does it without ceremony.
+No back-and-forth. No progressive disclosure that adds confusion. The page has one job and it does it without ceremony. Every step reinforces the same promise: *this will be quick and you will leave with something useful.*
 
 ### The "Surprise Me" mode
 
-One research insight that shaped the design: some developers don't want a filtered result — they want to be pushed outside their comfort zone. The "Surprise Me" option bypasses all filters and generates a random idea. This serves a different mental mode — exploration instead of targeting.
+One research insight that genuinely shaped the design: **some developers don't want a filtered result** — they want to be pushed outside their comfort zone entirely. The "Surprise Me" option bypasses all filters and generates a random idea across any skill level or domain.
 
-Having both modes on the same screen without either competing for attention required careful layout work. The primary CTA is "Generate Ideas." "Surprise Me" lives beside it — same visual weight, clearly secondary intent.
+This serves a different mental mode — exploration instead of targeting. Having both modes on the same screen without either competing for attention required careful layout work. The primary CTA is **Generate Ideas**. "Surprise Me" sits beside it — clearly secondary in intent, but equal in accessibility.
 
 ---
 
 ## Visual Design
 
-The interface is intentionally minimal. Developer tools that try too hard to look "cool" end up feeling distracting. The priority was:
+The interface is intentionally minimal. **Developer tools that try too hard to look impressive end up feeling distracting.** The design priorities were:
 
-- **Clarity of inputs** — every control should be immediately understandable with zero explanation
+- **Clarity of inputs** — every control should be immediately understandable with zero explanation needed
 - **Fast feedback** — selected states, hover states, and generated results all respond without lag
-- **No clutter** — nothing on screen that doesn't serve the task
+- **No clutter** — nothing on screen that does not directly serve the task
 
-The skill tier cards use a three-column layout that makes comparison easy. Each tier has a short label and a one-line description of who it is for — not what it includes, but *who it is for*. That distinction matters: it orients the user relationally, not technically.
+The **skill tier cards** use a three-column layout that makes comparison effortless. Each tier carries a short label and a one-line description of *who it is for* — not what it includes, but who it speaks to. That distinction matters: it orients the user relationally, not technically. A developer should be able to read a tier and immediately know whether it describes them.
 
-Domain tags are multi-select chips — visual, tappable, easy to scan. The selected state is clear. Deselecting is as easy as selecting.
+**Domain tags** are multi-select chips — visual, tappable, easy to scan at a glance. The selected state is high-contrast and unmissable. Deselecting is as frictionless as selecting.
+
+> The best developer tools feel like they were built by someone who understood the frustration, not just the feature request.
 
 ---
 
 ## Outcome
 
-ForgeFlow compresses what used to be a 30-minute aimless browsing session into a 30-second intentional interaction. Developers leave with something concrete — not just an idea, but an idea that fits where they actually are.
+ForgeFlow compresses what used to be a thirty-minute aimless browsing session into a thirty-second intentional interaction. Developers leave with something concrete — not just an idea, but **an idea that fits where they actually are** in their journey.
 
-The product validates a principle that runs through all good tool design: **the best tools respect your time, your level, and your goal — and get out of the way.**
+The product validates a principle that runs through all good tool design: respect the user's time, respect their level, respect their goal — then get out of the way entirely.
 
 > Developers don't have a motivation problem. They have a direction problem. ForgeFlow solves direction.
