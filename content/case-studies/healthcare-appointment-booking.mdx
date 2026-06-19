@@ -1,0 +1,91 @@
+﻿---
+title: "Healthcare Appointment Booking Platform"
+description: "Redesigning the appointment booking experience for a healthcare provider - reducing friction for patients and administrative burden for staff through a clearer, more accessible digital journey."
+role: "Product Designer"
+company: "Personal Project"
+timeline: "Apr 2026 - Jun 2026"
+year: "2026"
+tools: ["Figma", "FigJam", "Notion", "Maze"]
+tags: ["Healthcare", "Web Design", "Booking", "Accessibility"]
+outcomes:
+  - "Simplified the patient booking flow from 8 steps to 4"
+  - "Designed a staff-facing scheduling interface to reduce administrative load"
+  - "Built accessible, WCAG 2.1 AA-compliant components throughout"
+  - "Created a shared design system to support consistent future development"
+featured: true
+order: 6
+---
+
+## Overview
+
+Booking a healthcare appointment should be straightforward. In practice, many patients encounter long forms, confusing availability displays, and unclear language that creates friction at a moment when they are already stressed or unwell. This project redesigns the appointment booking experience for a mid-sized healthcare provider - improving the journey for patients on the front end and reducing administrative workload for staff on the back end.
+
+The project draws on three years of operational experience leading teams at Bolff Health Care in the UK, where appointment scheduling, patient flow, and administrative efficiency were central to daily operations.
+
+## The Problem
+
+The provider's existing online booking system had been built for the organisation's needs, not the patient's. The booking flow had eight steps, required patients to know their specific department and clinician before starting, used clinical terminology throughout, and did not surface real-time availability - leaving patients unsure whether the slot they selected was actually free.
+
+As a result, a large proportion of appointments were still being booked by phone, placing significant pressure on administrative staff and creating long wait times for callers.
+
+Staff on the administrative side faced an equally fragmented experience - managing bookings across a legacy system with no calendar view, no real-time visibility across clinicians, and a manual process for handling cancellations and rescheduling.
+
+## My Role
+
+This was a solo personal project built to demonstrate experience designing complex, two-sided digital products in a regulated, high-stakes context. I led all research, architecture, design, and testing.
+
+## Research
+
+**Operational Experience**
+
+My three years at Bolff Health Care gave me direct insight into both sides of the booking problem - the patient experience of navigating healthcare systems, and the operational reality faced by the administrative staff managing those systems daily. I understood the language, the pressures, and the moments where things most commonly broke down.
+
+**Patient Interviews**
+
+I conducted interviews with six people who had recently tried to book a healthcare appointment online. Key findings:
+
+- Participants described the existing process as "confusing", "slow", and "easier to just call"
+- The requirement to know your specific department before starting was a major point of failure; most patients did not know which department they needed
+- Clinical language throughout the form caused confusion and anxiety
+- Lack of visible real-time availability made participants doubt whether their booking had actually gone through
+- Mobile experience was poor; several participants had abandoned online booking and called instead
+
+**Staff Interviews**
+
+I spoke with two administrative staff members about their scheduling workflows. Both described the existing system as creating unnecessary manual work - particularly around cancellations, where there was no automated way to release and reallocate slots.
+
+## Information Architecture
+
+The core architectural decision was to lead with the patient's symptom or need, not with the organisational structure of the provider. Rather than asking "which department?", the new flow begins with "what do you need help with?" and routes the patient to the appropriate service based on their answer.
+
+This single change eliminated the most common point of failure in the existing flow and reduced the number of steps from eight to four.
+
+## Design Decisions
+
+**Patient-Facing Booking Flow**
+
+The redesigned patient journey follows four steps: describe your need, select a date and time, provide your details, and confirm. Each step occupies its own screen with a clear progress indicator. Plain English replaces clinical terminology throughout. Real-time availability is surfaced on a calendar view, with greyed-out dates making unavailable slots immediately clear.
+
+Confirmation is immediate, with a summary sent by SMS and email. Cancellation and rescheduling are available directly from the confirmation message - reducing the need to call.
+
+**Staff Scheduling Interface**
+
+The staff-facing tool was redesigned around a calendar-first view showing all clinicians and appointment slots in a single screen. Colour coding distinguishes appointment types. Cancellations trigger an automatic slot release and optional notification to patients on the waiting list. Administrative staff can view, move, and cancel appointments without leaving the calendar view.
+
+**Accessibility**
+
+All components were designed to WCAG 2.1 AA standards. This was a non-negotiable given the audience - healthcare users span a wide range of ages, abilities, and contexts. Specific decisions included: minimum 48x48px touch targets, 4.5:1 minimum colour contrast ratio, no reliance on colour alone to convey status, full keyboard navigability, and screen reader-compatible markup specified in handoff annotations.
+
+**Design System**
+
+To support consistent future development, I produced a shared component library covering all UI elements used across both the patient and staff interfaces - form inputs, buttons, status indicators, calendar components, and notification patterns - with documented usage guidelines.
+
+## Usability Testing
+
+I tested the redesigned patient flow with four participants using a Maze prototype. All four completed the booking task. The average time to complete dropped significantly compared to participants' descriptions of their experience with the existing flow. Post-task feedback described the experience as "much clearer" and "actually quite easy".
+
+## Reflection
+
+This project reinforced how much operational knowledge shapes design quality in complex domains. Understanding the administrative side of healthcare scheduling - the pressures, the manual workarounds, the consequences of a poorly managed cancellation - directly informed design decisions that a purely research-based approach might have missed. The best design here came from bridging that operational knowledge with genuine user empathy for both patients and staff.
+
+

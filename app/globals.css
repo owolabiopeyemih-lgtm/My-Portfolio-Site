@@ -1,26 +1,283 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* ─── Design tokens ─────────────────────────────────────────────────────────
+   Using @theme (NOT @theme inline) so Tailwind emits var() references in
+   utilities, allowing .light class overrides to propagate at runtime.
+──────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-canvas:       #000000;
+  --color-surface:      #0a0a0a;
+  --color-card:         #111111;
+  --color-foreground:   #ffffff;
+  --color-muted:        #a0a0a0;
+  --color-subtle:       #444444;
+  --color-accent:       #ffffff;
+  --color-accent-light: #cccccc;
+  --color-line:         #252525;
+  --color-line-muted:   #1a1a1a;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Light mode overrides ──────────────────────────────────────────────── */
+.light {
+  --color-canvas:       #ffffff;
+  --color-surface:      #f7f7f7;
+  --color-card:         #f0f0f0;
+  --color-foreground:   #000000;
+  --color-muted:        #4a4a4a;
+  --color-subtle:       #bebebe;
+  --color-accent:       #000000;
+  --color-accent-light: #444444;
+  --color-line:         #e0e0e0;
+  --color-line-muted:   #ebebeb;
+}
+
+/* ─── Component CSS vars (sidebar glass, orbs, cursor…) ─────────────────── */
+:root {
+  /* Dark defaults */
+  --sidebar-bg:         rgba(0,0,0,0.55);
+  --sidebar-border:     rgba(255,255,255,0.06);
+  --orb-a:              rgba(255,255,255,0.04);
+  --orb-b:              rgba(255,255,255,0.025);
+  --orb-c:              rgba(255,255,255,0.02);
+  --scan-line:          rgba(255,255,255,0.06);
+  --shimmer-color:      rgba(255,255,255,0.04);
+  --cursor-color:       #ffffff;
+  --cursor-ring:        rgba(255,255,255,0.5);
+  --cursor-ring-hover:  rgba(255,255,255,0.9);
+  --footer-text:        #888888;
+  --footer-hover:       #ffffff;
+  --dot-grid:           rgba(255,255,255,0.04);
+
+  /* Easing */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast:  150ms;
+  --duration-normal:280ms;
+  --duration-slow:  500ms;
+}
+
+.light {
+  --sidebar-bg:         rgba(255,255,255,0.75);
+  --sidebar-border:     rgba(0,0,0,0.07);
+  --orb-a:              rgba(0,0,0,0.04);
+  --orb-b:              rgba(0,0,0,0.025);
+  --orb-c:              rgba(0,0,0,0.015);
+  --scan-line:          rgba(0,0,0,0.04);
+  --shimmer-color:      rgba(0,0,0,0.03);
+  --cursor-color:       #000000;
+  --cursor-ring:        rgba(0,0,0,0.4);
+  --cursor-ring-hover:  rgba(0,0,0,0.85);
+  --footer-text:        #888888;
+  --footer-hover:       #000000;
+  --dot-grid:           rgba(0,0,0,0.06);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+p { line-height: 1.8; }
+
+::selection {
+  background-color: var(--color-foreground);
+  color: var(--color-canvas);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-canvas); }
+::-webkit-scrollbar-thumb { background: var(--color-subtle); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+/* ─── Grain texture ─────────────────────────────────────────────────────── */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-2%, -3%); }
+  30%       { transform: translate(2%, 2%); }
+  50%       { transform: translate(-1%, 4%); }
+  70%       { transform: translate(3%, -2%); }
+  90%       { transform: translate(-3%, 1%); }
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  animation: grain 8s steps(1) infinite;
+  pointer-events: none;
+}
+
+/* ─── Footer ────────────────────────────────────────────────────────────── */
+.footer-text { color: var(--footer-text); }
+.footer-link { color: var(--footer-text); }
+.footer-link:hover { color: var(--footer-hover); }
+
+/* ─── Custom cursor ─────────────────────────────────────────────────────── */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+
+  .cursor-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    background: var(--cursor-color);
+    box-shadow:
+      0 0 4px 2px var(--cursor-ring);
+    will-change: transform, opacity;
+    transition: box-shadow 180ms ease, width 180ms ease, height 180ms ease,
+                margin 180ms ease, opacity 300ms ease;
+  }
+
+  .cursor-shadow[data-hovering="true"] {
+    width: 7px;
+    height: 7px;
+    margin: -1px 0 0 -1px;
+    box-shadow:
+      0 0 6px 3px var(--cursor-ring);
+  }
+
+  .cursor-shadow[data-clicking="true"] {
+    width: 3px;
+    height: 3px;
+    margin: 1px 0 0 1px;
+    box-shadow:
+      0 0 3px 1px var(--cursor-ring-hover);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Prose base typography ─────────────────────────────────────────────── */
+.prose {
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  letter-spacing: 0.008em;
+}
+
+.prose p {
+  margin-bottom: 1.6em;
+}
+
+.prose h2 {
+  margin-top: 2.75em;
+  margin-bottom: 0.85em;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.prose h3 {
+  margin-top: 2em;
+  margin-bottom: 0.65em;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.prose hr {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+  border-color: var(--color-line);
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--color-foreground);
+  background: var(--color-card);
+  border-radius: 0 12px 12px 0;
+  padding: 1.1em 1.5em;
+  margin: 2em 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.prose blockquote p {
+  margin: 0;
+  color: var(--color-foreground);
+}
+
+.prose strong {
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+
+/* ─── Prose table styles ────────────────────────────────────────────────── */
+.prose table {
+  width: auto;
+  min-width: 320px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--color-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.prose thead tr {
+  border-bottom: 1px solid var(--color-subtle);
+}
+
+.prose th {
+  text-align: center;
+  font-weight: 700;
+  color: var(--color-foreground);
+  padding: 0.75rem 2rem;
+  background: var(--color-card);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prose td {
+  padding: 0.75rem 2rem;
+  color: var(--color-foreground);
+  border-bottom: 1px solid var(--color-line);
+  text-align: center;
+  font-weight: 500;
+}
+
+.prose tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover td {
+  background: var(--color-subtle);
+  transition: background 0.15s ease;
+}
+
+/* ─── Reduced motion ────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

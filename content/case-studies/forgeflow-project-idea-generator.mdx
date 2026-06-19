@@ -1,0 +1,107 @@
+---
+title: "ForgeFlow - Project Idea Generator"
+description: "A developer tool that generates personalised project ideas based on skill level and technical interests — designed to remove the blank-page paralysis that stops developers from building."
+role: "Product Designer"
+company: "Personal Project"
+timeline: "2026"
+year: "2026"
+coverImage: "/forgeflow-cover.jpg"
+tools: ["Figma", "FigJam", "Maze", "Framer"]
+tags: ["Product Design", "Developer Tools", "UX Research", "Web App"]
+outcomes:
+  - "Reduced time-to-idea from open-ended browsing to under 30 seconds"
+  - "Three skill tiers (Beginner, Intermediate, Senior) covering the full developer journey"
+  - "Ten domain categories enabling highly targeted idea generation"
+  - "Dual discovery modes — filtered generation and surprise randomisation"
+featured: true
+order: 2
+---
+
+## The Problem
+
+Every developer has been there: you want to build something, you open a blank code editor, and then you stare at it for forty minutes. Not because you lack skill — but because choosing *what* to build is its own problem, and nobody teaches you how to solve it.
+
+The gap between "I want to improve" and "I know what to build next" is wide, and most solutions — GitHub trending, dev blogs, Twitter threads — are either too generic or too advanced. A junior developer looking at a senior engineer's project list feels overwhelmed. A senior engineer looking at beginner tutorials feels bored.
+
+**The insight: project inspiration fails because it is not personalised.**
+
+---
+
+## Research & Discovery
+
+### Who is stuck?
+
+I spoke with developers across three experience levels — people just starting out, mid-level engineers looking to stretch, and senior developers who wanted complex architectural challenges. The pattern was consistent across all three:
+
+> "I know I need to build more projects. I just don't know which ones are worth my time."
+
+The blockers differed by level:
+
+- **Beginners** felt overwhelmed by scope — they didn't know if an idea was too hard or too easy
+- **Intermediate developers** wanted projects that would actually push them into new territory
+- **Senior engineers** were bored by typical project lists — they wanted genuine complexity
+
+### What was already out there?
+
+Existing solutions had one of two problems:
+
+1. **Too broad** — generic "build a todo app" lists that applied to no one specifically
+2. **Too narrow** — tutorials that locked you into one tech stack or one approach
+
+Neither solution respected where the developer actually was in their journey.
+
+---
+
+## Design Process
+
+### Defining the core interaction
+
+The central design question was: **how do you personalise without friction?**
+
+Most personalisation systems require sign-up, profiles, questionnaires. That creates a barrier before the user has even seen value. The goal was to make personalisation feel immediate — answer two or three questions, get something useful. No account. No onboarding flow.
+
+The three inputs I settled on:
+
+1. **Skill level** — three clear tiers with honest descriptions of what each means in practice
+2. **Interest domains** — multi-select categories so users could combine interests naturally (e.g. Frontend + AI/ML)
+3. **Volume** — how many ideas at once (1 to 5), because some people want one great idea, others want a shortlist to choose from
+
+### Information architecture
+
+The flow is deliberately linear and short:
+
+```
+Select skill level → Choose domains → Set volume → Generate
+```
+
+No back-and-forth. No progressive disclosure that confuses. The page has one job and it does it without ceremony.
+
+### The "Surprise Me" mode
+
+One research insight that shaped the design: some developers don't want a filtered result — they want to be pushed outside their comfort zone. The "Surprise Me" option bypasses all filters and generates a random idea. This serves a different mental mode — exploration instead of targeting.
+
+Having both modes on the same screen without either competing for attention required careful layout work. The primary CTA is "Generate Ideas." "Surprise Me" lives beside it — same visual weight, clearly secondary intent.
+
+---
+
+## Visual Design
+
+The interface is intentionally minimal. Developer tools that try too hard to look "cool" end up feeling distracting. The priority was:
+
+- **Clarity of inputs** — every control should be immediately understandable with zero explanation
+- **Fast feedback** — selected states, hover states, and generated results all respond without lag
+- **No clutter** — nothing on screen that doesn't serve the task
+
+The skill tier cards use a three-column layout that makes comparison easy. Each tier has a short label and a one-line description of who it is for — not what it includes, but *who it is for*. That distinction matters: it orients the user relationally, not technically.
+
+Domain tags are multi-select chips — visual, tappable, easy to scan. The selected state is clear. Deselecting is as easy as selecting.
+
+---
+
+## Outcome
+
+ForgeFlow compresses what used to be a 30-minute aimless browsing session into a 30-second intentional interaction. Developers leave with something concrete — not just an idea, but an idea that fits where they actually are.
+
+The product validates a principle that runs through all good tool design: **the best tools respect your time, your level, and your goal — and get out of the way.**
+
+> Developers don't have a motivation problem. They have a direction problem. ForgeFlow solves direction.
