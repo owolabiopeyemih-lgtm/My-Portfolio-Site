@@ -1,0 +1,91 @@
+---
+title: "Billsy"
+description: "A clean, real-time invoice builder for freelancers and small businesses — create, style, and download professional invoices in minutes."
+role: "Product Designer"
+company: "Personal Project"
+timeline: "2026"
+year: "2026"
+coverImage: "/billsy-cover.jpg"
+tools: ["Figma", "FigJam", "Framer", "Maze"]
+tags: ["Web App", "B2B", "Productivity", "Freelance Tools"]
+outcomes:
+  - "Split-view editor with live invoice preview — no guessing what the final PDF will look like"
+  - "Auto-calculated totals with per-line tax and discount controls"
+  - "Style tab lets businesses match invoices to their brand in seconds"
+  - "One-click PDF download removes the need for external tools or templates"
+featured: true
+order: 4
+---
+
+## The Problem
+
+Freelancers and small business owners lose hours every month to invoicing. They toggle between spreadsheets, Google Docs, and design tools to produce something that looks professional — and even then, the output is inconsistent, the maths is manual, and chasing payments starts before the invoice is even sent.
+
+> Billsy started with a simple premise: invoicing should take two minutes, look great, and feel effortless.
+
+---
+
+## Research & Discovery
+
+### Who is struggling with invoicing?
+
+I spoke with freelancers, independent consultants, and small agency owners. The patterns were consistent:
+
+- **Template chaos**: most people had a Word or Google Doc template they'd been copying for years — inconsistent branding, prone to errors
+- **Manual calculation anxiety**: tax percentages, discounts, subtotals — one wrong cell and the invoice is wrong
+- **No live feedback**: people would finish the form, export to PDF, realise something looked off, and start again
+- **Tooling mismatch**: dedicated invoicing software felt heavy and subscription-gated for what should be a simple task
+
+The core insight: **the problem wasn't creating invoices — it was not seeing what you were creating until it was too late to fix easily.**
+
+---
+
+## Design Process
+
+### The split-view decision
+
+The defining design decision was the two-panel layout: a structured form on the left, a pixel-accurate live preview on the right. Every change — business name, line item, tax rate — reflects instantly in the preview.
+
+This eliminates the most common source of frustration: the disconnect between filling out a form and seeing the result. With Billsy, what you see while editing is exactly what downloads as a PDF.
+
+### Information architecture
+
+The form is structured into three clear sections:
+
+1. **Invoice details** — number, dates, status, currency, billing type
+2. **Your business** — name, email, phone, address, logo upload
+3. **Bill to** — client name, contact details, address
+
+This mirrors how a freelancer naturally thinks about an invoice: first the admin, then my details, then my client's details. The order reduces cognitive load by matching mental model to form flow.
+
+### Line items
+
+Each line item captures: description, quantity, unit price, tax percentage, and discount. Totals calculate automatically. The subtotal, tax, and **Total Due** update in real time — no calculator needed, no manual checking.
+
+### The Style tab
+
+A second tab lets users customise the invoice's visual appearance — colour scheme, typography weight, header layout. This was a deliberate separation from the Details tab: content and style are distinct concerns, and mixing them in one long form creates noise.
+
+The result: a branded invoice that looks intentional, not like a printed spreadsheet.
+
+### Status and workflow
+
+Invoices begin as **Draft** — a signal that they are not yet sent and safe to edit. Status can move to reflect the payment lifecycle. The breadcrumb trail (`Dashboard / INV-001 / Draft`) gives users a clear sense of where they are without needing a tutorial.
+
+---
+
+## Visual Design
+
+Billsy's interface is deliberately calm and typographically clean. The invoice preview uses a bold indigo header to give the document authority and visual identity — it looks like something a client will take seriously.
+
+**The form** uses generous field spacing and clear section headers (`YOUR BUSINESS`, `BILL TO`) to make scanning and filling feel fast rather than form-like.
+
+**The preview** is rendered at true proportions so the user knows exactly how the downloaded PDF will look — right down to the column widths in the line items table.
+
+---
+
+## Outcome
+
+> A good invoice tool should be invisible. You fill it out, it looks right, you send it. Billsy was designed to get out of the way.
+
+The split-view editor, auto-calculations, and one-click PDF export reduce a task that once took 20–30 minutes of fiddling to under two minutes — for a document that arrives looking polished and professional.
