@@ -4,7 +4,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 export const metadata: Metadata = {
   title: "Process",
   description:
-    "How Opeyemi approaches product design â€” from discovery and research through to validated delivery.",
+    "How Opeyemi approaches product design — from discovery and research through to validated delivery.",
 };
 
 const steps = [
@@ -24,7 +24,7 @@ const steps = [
     number: "02",
     title: "Research",
     description:
-      "I design research plans tailored to the question at hand â€” whether that's generative research to understand unmet needs or evaluative research to test existing assumptions. Methods include user interviews, surveys, diary studies, contextual inquiry, and usability tests.",
+      "I design research plans tailored to the question at hand — whether that's generative research to understand unmet needs or evaluative research to test existing assumptions. Methods include user interviews, surveys, diary studies, contextual inquiry, and usability tests.",
     deliverables: [
       "Research plan",
       "Interview guides",
@@ -36,7 +36,7 @@ const steps = [
     number: "03",
     title: "Definition",
     description:
-      "Research generates data; definition generates clarity. I synthesise findings into user personas, journey maps, and opportunity statements. This phase is where the real design problem gets articulated â€” often different from the assumed brief.",
+      "Research generates data; definition generates clarity. I synthesise findings into user personas, journey maps, and opportunity statements. This phase is where the real design problem gets articulated — often very different from the assumed brief.",
     deliverables: [
       "User personas",
       "Journey maps",
@@ -48,7 +48,7 @@ const steps = [
     number: "04",
     title: "Ideation",
     description:
-      "With a sharp problem definition, I open the aperture wide. Sketching, crazy-eights, design sprints, and collaborative workshops help generate a breadth of potential solutions. I document all ideas before narrowing â€” diverge first, converge later.",
+      "With a sharp problem definition, I open the aperture wide. Sketching, crazy-eights, design sprints, and collaborative workshops help generate a breadth of potential solutions. I document all ideas before narrowing — diverge first, converge later.",
     deliverables: [
       "Sketches & rough concepts",
       "Workshop outputs",
@@ -60,7 +60,7 @@ const steps = [
     number: "05",
     title: "Design",
     description:
-      "From concepts to craft. I build from low-fidelity wireframes that validate flow and structure, up to high-fidelity designs that nail the visual detail. Everything is designed within (or informed by) a design system for consistency and scalability.",
+      "From concepts to craft. I build from low-fidelity wireframes that validate flow and structure, up to high-fidelity designs that nail the visual detail. Everything is designed within — or informed by — a design system for consistency and scalability.",
     deliverables: [
       "Information architecture",
       "User flows",
@@ -85,7 +85,7 @@ const steps = [
     number: "07",
     title: "Iteration",
     description:
-      "The best designs are never done on the first pass. I refine based on test findings and continue to validate until the design meets the defined success criteria. Iteration is not failure â€” it's the process working as intended.",
+      "The best designs are never done on the first pass. I refine based on test findings and continue to validate until the design meets the defined success criteria. Iteration is not failure — it's the process working exactly as intended.",
     deliverables: [
       "Revised designs",
       "Changelog",
@@ -97,7 +97,7 @@ const steps = [
     number: "08",
     title: "Delivery",
     description:
-      "Great design requires great handoff. I work closely with engineers throughout implementation â€” providing annotated specs, responding to implementation questions, reviewing builds against designs, and tracking post-launch metrics to close the feedback loop.",
+      "Great design requires great handoff. I work closely with engineers throughout implementation — providing annotated specs, responding to questions, reviewing builds against designs, and tracking post-launch metrics to close the feedback loop.",
     deliverables: [
       "Design specs & annotations",
       "Design tokens",
@@ -117,9 +117,9 @@ export default function ProcessPage() {
         <h1 className="text-4xl md:text-5xl font-semibold text-foreground mb-4">
           Design Process
         </h1>
-        <p className="text-muted text-lg max-w-2xl mb-20">
+        <p className="text-foreground/70 text-lg max-w-2xl mb-20">
           A structured yet flexible approach that balances rigour with speed.
-          The depth at each stage scales to the project â€” but the sequence
+          The depth at each stage scales to the project — but the sequence
           rarely changes.
         </p>
       </AnimatedSection>
@@ -140,7 +140,7 @@ export default function ProcessPage() {
 
               {/* Content */}
               <div>
-                <p className="text-muted leading-relaxed mb-6">
+                <p className="text-foreground/75 leading-relaxed mb-6">
                   {step.description}
                 </p>
                 <div>
@@ -151,7 +151,7 @@ export default function ProcessPage() {
                     {step.deliverables.map((d) => (
                       <li
                         key={d}
-                        className="text-xs bg-card border border-line text-muted px-3 py-1.5 rounded-full"
+                        className="text-xs bg-card border border-line text-foreground/70 px-3 py-1.5 rounded-full"
                       >
                         {d}
                       </li>
@@ -166,4 +166,3 @@ export default function ProcessPage() {
     </div>
   );
 }
-
