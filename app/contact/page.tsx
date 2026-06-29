@@ -32,7 +32,7 @@ const contactLinks = [
     icon: ExternalLink,
     label: "Behance",
     value: "behance.net/opeyemiowolabi3",
-    href: "https://www.behance.net/opeyemiowolabi3",
+    href: "https://www.behance.net/opeyemiowolabi26",
   },
   {
     icon: CalendarDays,
