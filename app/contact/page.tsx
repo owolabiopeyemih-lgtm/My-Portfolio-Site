@@ -31,7 +31,7 @@ const contactLinks = [
   {
     icon: ExternalLink,
     label: "Behance",
-    value: "behance.net/opeyemiowolabi3",
+    value: "behance.net/opeyemiowolabi26",
     href: "https://www.behance.net/opeyemiowolabi26",
   },
   {
